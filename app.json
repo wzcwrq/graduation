@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/my/my",
+    "pages/hum/hum",
+    "pages/temper/temper",
+    "pages/alarm/alarm",
+    "pages/MQ5/MQ5",
+    "pages/PM25/PM25",
+    "pages/vent/vent",
+    "pages/service/service",
+    "pages/safe/safe",
+    "pages/common/common",
+    "pages/aboutus/aboutus",
+    "pages/register/register",
+    "pages/logout/logout",
+    "pages/tousername/tousername",
+    "pages/toaccount/toaccount",
+    "pages/tophonenumber/tophonenumber",
+    "pages/topassword/topassword",
+    "pages/logout/surelogout/surelogout",
+    "pages/msg/msg",
+    "pages/topassword/change_pw/index"
+  ],
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#eef3f3",
+    "navigationBarTitleText": "云瑶家庭空气监控",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle" :"black"
+  },
+  "permission": {
+    "scope.userFuzzyLocation": {
+      "desc": "您的位置信息将用于天气展示"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getFuzzyLocation"
+  ],
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-area": "@vant/weapp/area/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-circle": "@vant/weapp/circle/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-switch":"@vant/weapp/switch/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-stepper": "@vant/weapp/stepper/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#550000",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/home.png",
+        "selectedIconPath": "/static/images/home-HL.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "/static/images/service.png",
+        "selectedIconPath": "/static/images/service-HL.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/static/images/user.png",
+        "selectedIconPath": "/static/images/user-HL.png"
+      }
+    ]
+  }
+}
