@@ -1,0 +1,18 @@
+<!--pages/tousername/tousername.wxml-->
+
+<van-cell-group>
+  <van-field
+    value="{{username[0]}}"
+    clearable
+    bind:click-icon="onClickIcon"
+    custom-style="margin-top: 10px;"
+    bind:blur="on_check_username"
+    error-message="{{username[2]}}"
+  />
+
+  </van-cell-group>
+  <view style="margin:0 16% 10% 16%">
+   <van-button type="info" round size="large"  color="linear-gradient(to right, #4bb0ff, #6149f6)" style=" margin:50px;display:flex;" bindtap="finish">保 存</van-button>
+   </view>
+
+

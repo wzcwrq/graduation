@@ -1,0 +1,24 @@
+<!--pages/topassword/change_pw/index.wxml-->
+<van-cell-group>
+  <view  class="body" style="background-color: {{firstpassword[1]}};">
+  <van-field 
+  type="{{show[0]}}" 
+  label="新的密码:"
+  right-icon="{{icon}}"
+  error-message="{{firstpassword[2]}}"
+  bind:click-icon="onclick_icon"
+  bind:blur="firstpassword"
+   />
+  </view>
+
+  <van-field
+    label="确认密码:"
+    clearable
+    type="password"
+    custom-style="margin-top: 30px;"
+    bind:blur="secondpassword"
+  />
+  <view style="margin:0 16% 10% 16%">
+   <van-button type="info" round size="large"  color="linear-gradient(to right, #4bb0ff, #6149f6)" style=" margin:50px;display:flex;" bind:click="onsave" >保 存</van-button>
+   </view>
+</van-cell-group>

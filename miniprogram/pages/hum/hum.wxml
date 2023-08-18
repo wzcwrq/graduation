@@ -1,0 +1,55 @@
+<view class="root">
+<view class="header">
+  <van-button  class="bt" size="large" color="linear-gradient(to right, #2149f6, #4ba0f0)" type="primary" bindtap="calender_Display" >
+       {{date}}
+  </van-button >
+  <van-button class="bt" size="large" custom-style="margin-left:1rpx" color="linear-gradient(to right,#4ba0f0 , #6149f6)" type="primary" bindtap="updateData" >更新数据</van-button>
+</view>
+<view class="body" wx:if="{{!show}}">
+<view style="height: 30px;background-color: #ffffff;"> </view>
+<view></view>
+<view class="container" >
+    <canvas class="canvas"  canvas-id="lineCanvas" style="width: {{2*screenWidth}}px;" 
+    disable-scroll="true" 
+    enableScroll="true"
+    bindtouchstart="touchHandler"></canvas>
+</view>
+<view class="line"></view>
+</view>
+
+<view class="notice-wrapper">
+  <view class="lian">
+  <image class="lianjie" src="/static/images/lian2.png" ></image>
+  </view>
+  <view class="notice">
+    <view class="content-wrapper" style=" padding-top: 20px;">
+      <view class="hole">
+      </view>
+    </view>
+    <view class="content-wrapper" >
+      <view class="content">所选时间：</view>
+      <view class="content" style="margin-left: -10%;">{{date}} {{t0}} 时</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">当日最大湿度：</view>
+      <view class="content" style="margin-left: -10%;color: {{d0[0]>Stepper2?'#ff0000':'010101'}};">{{d0[0]}} %</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">当日最小湿度：</view>
+      <view class="content" style="margin-left: -10%;color: {{d0[1]>Stepper2?'#ff0000':'010101'}};">{{d0[1]}} %</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">所选平均湿度：</view>
+      <view class="content" style="margin-left: -10%;color: {{d1>Stepper2?'#ff0000':'010101'}};">{{d1}} %</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">所选最大湿度：</view>
+      <view class="content" style="margin-left: -10%;color: {{d2>Stepper2?'#ff0000':'010101'}};">{{d2}} %</view>
+    </view>
+  </view>
+</view>
+</view>
+
+<van-calendar show="{{ show }}" min-date="{{minDate}}"
+max-date="{{ maxDate }}" defaultDate="{{defaultDate}}" bind:close="onClose" bind:confirm="onConfirm" 
+/>

@@ -1,0 +1,199 @@
+.root-wrapper{
+  min-height: 100vh;
+  overflow: hidden;
+}
+.header-wrapper{
+  background:linear-gradient(rgba(134, 134, 131, 0.3),rgba(255, 182, 164, 0.12));
+  background-blend-mode:multiply;
+  height: 350rpx;
+  position: relative;
+  overflow: hidden;
+}
+.background{
+  height: 350rpx;
+  position:absolute;
+  overflow: hidden;
+  z-index: -9;
+}
+
+.header-content-wrapper{
+  padding: 20px 0  0 0;
+}
+.header-title{
+  margin-top: 10px;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-around;
+  font-size: 40px;
+  overflow: hidden;
+  width: 750rpx; 
+  
+}
+.header-content{
+  color:#ffffff;
+}
+.header-text{
+  height: 96rpx;
+  font-size:48px;
+  display:flex;
+  justify-content: space-around;
+  
+}
+
+.swiper_wrapper{
+  height: 42px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px;
+  background:linear-gradient(rgba(253, 204, 197, 0.5),rgba(199, 218, 255,0.7));
+  font: "https://cdn.jsdelivr.net/npm/qweather-icons@1.3.1/font/qweather-icons.css";
+  box-shadow:3px 3px 6px 3px rgba(25, 25, 26, 0.2),
+            inset -1px -1px 2px  rgba(0,0,0,0.1),
+            inset 1px 1px 8px  rgb(255, 255, 255),
+            0 -2px 15px -1px rgba(25, 25, 26, 0.05);
+}
+.swiper{
+  height: 42px; 
+  font-size: 15px;
+  justify-content: center;
+  color: rgb(12, 11, 11);
+  box-shadow:3px 3px 6px -3px rgba(209, 178, 158, 0.856),
+            inset -1px -1px 2px  rgba(148, 124, 124, 0.1),
+            0 -2px 15px -1px rgba(139, 139, 143, 0.05);
+}
+.item_text{ 
+  font-size: 18px;
+}
+
+/* body */
+
+.body-wrapper{
+  padding:0 1px 5px 1px;
+}
+
+
+.shadow-wrapper{
+  width: 94%;
+  margin-left: 3%;
+  padding:0 4rpx 10rpx 4rpx;
+  border-radius: 24rpx;
+  box-shadow:6px 6px 10px -3px rgba(32, 32, 32, 0.2),
+            inset 3px 3px 6px -3px rgb(255, 255, 255),
+            inset -1px -1px 1px rgba(160, 160, 160, 0.5),
+            0 0 5px 1px rgba(207, 207, 219, 0.952);
+}
+.data-wrapper {
+  padding:12rpx 0 5rpx 0;
+  margin-top: 10px;
+  border-radius: 25rpx;
+  display:flex;
+  justify-content: space-around;
+}
+
+.shadow{
+  padding: 20rpx 3rpx 20rpx 3rpx;
+  border-radius: 10px;
+}
+
+.data{
+  background: #ffe3d0;
+  width:140px;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  transition: tranform 0.1s ease-in-out;
+  box-shadow:5px 5px 8px 1px rgba(148, 106, 106, 0.4),
+            inset 5px 5px 10px  rgba(233, 226, 226, 0.4),
+            -2px -2px 4px rgba(207, 191, 191, 0.4),
+            inset -1px -1px 1px #f3d6ba
+} 
+.data:active{
+  transform: scale(0.95);
+}
+.data_un{
+  background: #ffe3d0;
+  width:140px;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow:5px 5px 10px 1px rgba(148, 106, 106, 0.4),
+            inset 5px 5px 15px  #fce9dc,
+            -2px -2px 1px #fcefe2,
+            inset -1px -1px 1px #f0d0b0
+}
+
+.navigator-hover{
+  color:blue;
+}
+
+.botton-data{
+  width:10px;
+  height: 10px;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.data-left{
+  margin-top: 11px;
+  margin-left: 15px;
+}
+.data-right{
+  margin-top: 11px;
+  margin-right: 15px;
+}
+.data-logo{
+  height:36px;
+  width:36px;
+}
+.data-title{
+  font-size: 14px;
+  color: #2b2c2b;
+}
+.data-value{
+  color:#2b2c2b;
+  font-size: 40rpx;
+  margin-top: 11rpx;
+  margin-right: 30rpx;
+}
+.size{
+  font-size: 30px;
+}
+.sizePM25{
+  font-size: 30px;
+  margin-left: 10rpx;
+}
+
+.marea{
+  width: 100%
+}
+.mview{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(12, 11, 11,0.4),
+              1px 2px 2px 1px rgba(12, 11, 11,0.3);
+}
+.msg{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+}
+.msgimage{
+  width:50px;
+  height:50px;
+  position: absolute;
+  border-radius: 50%;
+}
+.redpoint{
+  width: 10px;
+  height:10px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgb(233, 0, 0);
+}
+.msgshadow{
+  padding: 0 1rpx 1rpx 1rpx;
+  background: radial-gradient( #ada4a4, rgb(194, 183, 183));
+  border-radius: 50%;
+}

@@ -1,0 +1,167 @@
+<!--index.wxml-->
+
+<view class="root-wrapper" style="width: {{windowWidth}}px; height:  {{windowHeight}}px; display: block; box-sizing: border-box;">
+  <view class="root">
+    <movable-area class="marea" style="height:  {{0.99*windowHeight}}px">
+      
+    <view class="header-wrapper">
+      <!--可能会用到： mode="heightFix" -->
+      <image class="background" style=" width: 750rpx; display: block; box-sizing: content-box" src="/static/images/background.jpg">
+      </image>
+
+      <view class="header-content-wrapper">
+        <view class="header-title">
+          <view class="header-content">室内温度</view>
+          <view class="header-content">室内湿度</view>
+        </view>
+        <view class="header-text" style="width: 750rpx; height: 94rpx; display: flex; box-sizing: border-box">
+          <view style="color: {{temper[1]}}; font-size: 48px;">{{temper[0]}}℃</view>
+          <view style="color: {{hum[1]}};font-size: 48px;">{{hum[0]}}%</view>
+        </view>
+      </view>
+    </view>
+
+    <!--  -->
+    <!-- 滚动提示 -->
+    <view class="swiper_wrapper">
+      <view class="swiper">
+        <view style="display: flex;justify-content: center;"> {{time}}</view>
+
+        <view class="notice_swiper">
+          <swiper autoplay="true" indicator-color="rgba(0,0,0,0.1)" circular="true" interval="2500" duration="5000">
+            <block wx:for="{{notice}}" wx:key="this">
+              <swiper-item>
+                <text class="item_text">{{noticetext[index]}}{{notice[index]}}{{notice2[index]}}
+                </text>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+      </view>
+    </view>
+
+    <!--  -->
+
+    <view class="body-wrapper">
+      <view class="body">
+        <view class="shadow-wrapper" style=" background: linear-gradient( rgba(199, 218, 255,0.7),rgba(194, 253, 255,0.7))">
+          <view class="data-wrapper"  style=" background: linear-gradient( rgba(199, 218, 255,0.7),rgba(194, 253, 255,0.7))">
+            <view class="shadow">
+              <view class="data" hover-class="navigator-hover" bindtap="totemperPage">
+                <view class="data-left">
+                  <image class="data-logo" src="/static/images/temper.png"></image>
+                  <view class="data-title">温度</view>
+                </view>
+                <view class="data-value">
+                  <view class="size" style="color: {{temper[1]}}">
+                    {{temper[0]}}
+                  </view>
+                 <view style="margin-left: 30rpx;margin-top: 7rpx;">℃</view> 
+                </view>
+              </view>
+            </view>
+            <view class="shadow">
+              <view class="data" hover-class="navigator-hover" bindtap="tohumPage">
+                <view class="data-left">
+                  <image class="data-logo" src="/static/images/hum.png"></image>
+                  <view class="data-title">湿度</view>
+                </view>
+                <view class="data-value">
+                  <view class="size" style="color: {{hum[1]}}">
+                    {{hum[0]}}
+                  </view>
+                 <view style="margin-left: 30rpx;margin-top: 7rpx;">%</view> 
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="shadow-wrapper" style=" background: linear-gradient( rgba(194, 253, 255,0.7),rgba(188, 253, 232,0.7))">
+          <view class="data-wrapper" style=" background: linear-gradient( rgba(194, 253, 255,0.7),rgba(188, 253, 232,0.7))">
+            <view class="shadow">
+              <view class="data" hover-class="navigator-hover" bindtap="toMQ5Page">
+                <view class="data-left">
+                  <image class="data-logo" src="/static/images/MQ5.png"></image>
+                  <view class="data-title" style="width:60px">可燃气体</view>
+                </view>
+                <view class="data-value">
+                  <view class="size" style="margin-left: -20rpx;color: {{MQ5[1]}};">{{MQ5[0]}}</view>
+                  <view style="margin-top: 7rpx;">PPM</view>
+                </view>
+              </view>
+            </view>
+            <view class="shadow">
+              <view class="data" hover-class="navigator-hover" bindtap="toPM25Page">
+                <view class="data-left">
+                  <image class="data-logo" src="/static/images/PM25.png"></image>
+                  <view class="data-title" style="width:60px">PM2.5</view>
+                </view>
+                <view class="data-value">
+                  <view class="size" style="margin-left: -20rpx;color: {{PM25[1]}};">{{PM25[0]}}</view>
+                  <view style="margin-top: 7rpx;">ug/m³</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="shadow-wrapper" style=" background: linear-gradient( rgba(188, 253, 232,0.7),rgba(227, 255, 191,0.7))">
+          <view class="data-wrapper" style=" background: linear-gradient( rgba(188, 253, 232,0.7),rgba(227, 255, 191,0.7))">
+            <view class="shadow">
+              <view class="data" hover-class="navigator-hover" bindtap="toalarmPage">
+                <view class="data-left">
+                  <image class="data-logo" src="/static/images/alarm.png"></image>
+                  <view class="data-title">警报器</view>
+                </view>
+                <view class="data-value" style="margin-top:15%;">
+                  <view catchtap="catchtap_true">
+                  <switch checked="{{alarm}}" data-info="{{alarm}}" bindchange="controll_alarm"  color="#3d7ef9"></switch>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="shadow">
+              <view class="data" hover-class="navigator-hover" bindtap="toventPage">
+                <view class="data-left">
+                  <image class="data-logo" src="/static/images/vent.png"></image>
+                  <view class="data-title">通风机</view>
+                </view>
+                <view class="data-value" style="margin-top:15%;">
+                  <view catchtap="catchtap_true">
+                  <switch checked="{{vent}}" data-info="{{vent}}" bindchange="controll_vent" color="#3d7ef9"></switch>
+                </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>     
+      </view>
+    </view>
+
+
+    <movable-view  class="mview" 
+      x="{{x}}"
+      y="{{y}}"
+      direction="all" 
+      out-of-bounds 
+      inertia
+      friction="2"
+      animation
+      bind:touchend ="msgchange"
+      >
+
+      <view wx:if="{{redpoint}}" class="redpoint" style="margin-left:{{x==0?42:-2}}px;"> </view>
+      <view class="msgimage" 
+      style="background: linear-gradient({{dan[0]}},{{dan[1]}});" bindtap="tomsg"  >
+      <image class="msgimage" src="/static/images/{{dan[2]}}.png" ></image>
+      </view>
+      </movable-view>
+  </movable-area>
+    <!--  -->
+  </view>
+</view>
+
+<van-toast id="van-toast" />
+
+
+    
+

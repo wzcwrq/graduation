@@ -1,0 +1,40 @@
+<!--packageA/pages/alarm/alarm.wxml-->
+<view class="root"> 
+  <view class="notice-wrapper">
+  <view class="notice">
+    <view class="content-wrapper" style=" padding-top: 20px;">
+      <view class="hole">
+      </view>
+    </view>
+    <view class="content-wrapper" >
+      <view class="content">上次警报时间：</view>
+      <view class="content" style="margin-left: -10%;">{{t0}}</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">温度：</view>
+      <view class="content" style="margin-left: -10%;">{{temper}} ℃</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">湿度：</view>
+      <view class="content" style="margin-left: -10%;">{{hum}} %</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">可燃气浓度：</view>
+      <view class="content" style="margin-left: -10%;">{{MQ5}} PPM</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">PM2.5浓度：</view>
+      <view class="content" style="margin-left: -10%;">{{PM25}} ug/m³</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">警报器：</view>
+      <view class="content" style="margin-left: -10%;">{{alarm ? '开启' : '关闭'}}</view>
+    </view>
+    <view class="content-wrapper">
+      <view class="content">通风机：</view>
+      <view class="content" style="margin-left: -10%;">{{vent ? '开启' : '关闭'}}</view>
+    </view>
+  </view>
+</view>
+
+</view>

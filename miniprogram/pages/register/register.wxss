@@ -1,0 +1,25 @@
+/* pages/login/login.wxss */
+
+
+.circle-wrapper{
+  margin-top: 30rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gradual{
+  height: 200%;
+  background: linear-gradient(rgb(255, 116, 24), rgba(76, 161, 240, 0));
+}
+.body-wrapper{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.body{
+  padding: 5rpx 5rpx 5rpx 5rpx;
+  margin-top: 20rpx;
+}
+
+.button{
+  padding: 120rpx 30rpx 0 30rpx;
+}

@@ -1,0 +1,31 @@
+<!--pages/msg/msg.wxml-->
+<view class="title" style="color:#3b0b05"> 消 息 通 知 </view>
+<view class="body">
+<van-collapse accordion value="{{ activeName0 }}" bind:change="onChange0" >
+<van-collapse-item title="系统通知 2023-01-01 00:00:00" name="0" icon="shop-o">
+  <view class="msginfo"> 
+    云瑶家庭空气监控系统——致力于家居环境的时刻关注,为美好生活保驾护航
+  </view> 
+  </van-collapse-item>
+</van-collapse>
+
+<van-collapse accordion value="{{ activeName }}" bind:change="onChange" >
+  <view wx:for="{{childArr}}" wx:key="id">
+  <van-collapse-item title="超限警告 {{item.time}}" name="{{item.id}}" icon="volume-o">
+    <view class="msginfo">
+      <van-icon name="bars" color="#1989fa"/>
+      温度：{{item.temper}} ℃
+      湿度：{{item.hum}} %
+      可燃气：{{item.MQ5}} PPM
+    </view> 
+    <view class="msginfo">
+      <van-icon name="bars" color="#1989fa"/>
+      PM2.5：{{item.PM25}} ug/m³
+      警报器：{{item.alarm ? '开' : '关'}}
+      风机：{{item.vent ? '开' : '关'}}
+    </view>
+  </van-collapse-item>
+  </view>
+</van-collapse>
+</view>
+<view class="foot">仅显示最近十条且间隔一分钟以上的警告信息</view>

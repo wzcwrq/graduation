@@ -1,0 +1,6 @@
+<!--pages/aboutus/aboutus.wxml-->
+
+<van-cell-group inset>
+<van-cell title="本小程序所有权归作者所有" />
+<van-cell title="联系邮箱" value="...@qq.com" label="反馈意见请发送邮件至该邮箱" />
+</van-cell-group>

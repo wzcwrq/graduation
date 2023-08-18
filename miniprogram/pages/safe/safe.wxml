@@ -1,0 +1,55 @@
+<!--pages/safe/safe.wxml-->
+<view class="root-wrapper">
+
+
+<view class="body">
+  <van-cell title="用户名" is-link bind:click="tousername"/>
+  <van-cell title="账号" value="{{account}}"/>
+  <van-cell title="手机号码"  value="{{phonenumber}}"/>
+  <van-cell title="修改密码" is-link link-type="navigateTo"
+  url="/pages/topassword/topassword" />
+</view>
+
+
+
+<view class="botton" style="margin-top: 30%;">
+<van-button 
+type="primary" 
+size="large" 
+color="linear-gradient(to right, #24bd42, #20ff4f)" bindtap="quit"
+>退出当前账号
+</van-button>
+</view>
+
+<view class="botton">
+<van-button 
+type="primary" 
+size="large" 
+color="linear-gradient(to right, #f91e0e, #f96136)"
+bindtap="logout"
+>注销账号
+</van-button>
+</view>
+
+
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose" round>
+  <view style="width: 500rpx;height: 220rpx;margin-top: 50px;">
+    <view style="display: flex; justify-content: center;font-size: 20px;">您确定要退出当前账号
+    </view>
+    <view style="margin-top: 10%; display: flex;justify-content: space-around;">
+    <van-button custom-style="width:200rpx ; font-size:32rpx" color="#39dc47" type="primary" size="normal" round bind:click="no">取 消</van-button>
+    <van-button custom-style="width:200rpx;font-size:32rpx" color="#fc4a18" type="primary" size="normal" round bind:click="sure">确  定</van-button>
+    </view>
+  </view>
+</van-popup>
+
+
+
+
+
+
+
+
+<van-toast id="van-toast" />

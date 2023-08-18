@@ -1,0 +1,154 @@
+<!--pages/service/service.wxml-->
+<view class="root-wrapper" style="padding-bottom: {{phone[1]/4}}px;">
+  <view class="root" >
+    <view class="app_logo-wrapper">
+      <view class="app_logo" style="height: 350rpx; display: block; box-sizing: content-box">
+        <image src="/static/images/app_logo2.jpg" style="width: 750rpx; height: 350rpx; display: inline-block; box-sizing: border-box"></image>
+      </view>
+
+    </view>
+
+    <view class="header-wrapper">
+      <van-dropdown-menu>
+        <van-dropdown-item  id="Stepper" title="安全值设置">
+          <van-cell title="安全值" center label="即危险临界值，任意一项数值超过安全值皆会报警">
+            <van-button type="default"color="linear-gradient(to right, #4bb0ff, #6149f6)" hairline bind:click="usedefault">使用默认值</van-button>
+          </van-cell>
+          <van-cell title="{{switchTitle1}}" label="可选范围：20~38℃" center>
+            <van-stepper value="{{ Stepper1 }}" input-width="40px" button-size="32px" min="20" max="38" bind:change="onStepper1"/>
+          </van-cell>
+          <van-cell title="{{ switchTitle2 }}"label="可选范围：65%~100%" center>
+            <van-stepper value="{{ Stepper2 }}" input-width="40px" button-size="32px" min="65" max="100"
+            bind:change="onStepper2"/>
+          </van-cell>
+          <van-cell title="{{ switchTitle3 }}"label="可选范围：60~150PPM" center>
+            <van-stepper value="{{ Stepper3 }}" input-width="40px" button-size="32px" min="60" max="150"
+            bind:change="onStepper3"/>
+          </van-cell>
+          <van-cell title="{{ switchTitle4 }}"label="可选范围：60~150ug/m³" center>
+            <van-stepper value="{{ Stepper4 }}" input-width="40px" button-size="32px" min="60" max="150"
+            bind:change="onStepper4"/>
+          </van-cell>
+          <view style="padding: 10px 25px;">
+            <van-button type="danger" block round bind:click="onConfirm0">
+              确认
+            </van-button>
+          </view>
+        </van-dropdown-item>
+
+        <van-dropdown-item  id="item" title="超限通知" >
+          <van-cell title="{{ switchTitle1 }}">
+            <van-switch
+            slot="right-icon"
+            size="24px"
+            style="height: 30px"
+            checked="{{ switch1 }}"
+            active-color="#ee0a24"
+            bind:change="onSwitch1Change"
+          />
+          </van-cell>
+      <van-cell title="{{ switchTitle2 }}">
+        <van-switch
+          slot="right-icon"
+          size="24px"
+          style="height: 26px"
+          checked="{{ switch2 }}"
+          active-color="#ee0a24"
+          bind:change="onSwitch2Change"
+        />
+      </van-cell>
+      <van-cell title="{{ switchTitle3 }}">
+            <van-switch
+            slot="right-icon"
+            size="24px"
+            style="height: 30px"
+            checked="{{ switch3 }}"
+            active-color="#ee0a24"
+            bind:change="onSwitch3Change"
+          />
+          </van-cell>
+          <van-cell title="{{ switchTitle4 }}">
+            <van-switch
+            slot="right-icon"
+            size="24px"
+            style="height: 30px"
+            checked="{{ switch4 }}"
+            active-color="#ee0a24"
+            bind:change="onSwitch4Change"
+          />
+          </van-cell>
+          <view style="padding: 10px 25px;">
+            <van-button type="danger" block round bind:click="onConfirm">
+              确认
+            </van-button>
+          </view>
+        </van-dropdown-item>
+      </van-dropdown-menu>
+    </view>
+    <view class="body-wrapper">
+      <view class="list" hover-class="navigator-hover" bindtap="onclickurl">
+        <image class="logo" style="background-color: #1e78ff" src="/static/images/device.png"></image>
+        <view class="list_data">我的设备号：{{url}}</view>
+      </view>
+      <view class="list" hover-class="navigator-hover" bindtap="onclickarea">
+        <image class="logo" style="background-color: #00dd37" src="/static/images/area.png"></image>
+        <view class="list_data">设备所在地：{{area}}</view>
+      </view>
+    </view>
+    <view class="body-wrapper">
+      <view class="list" wx:for="{{contracts}}" wx:key="item" hover-class="navigator-hover">
+        <image class="logo" style="background-color: #ffba6a" src="/static/images/contract.png"></image>
+        <view class="list_data">设备共享人：{{item}}</view>
+      </view>
+    </view>
+
+    <view style="padding-bottom: {{phone[1]/8}}px;">
+    </view>
+
+  </view>
+
+</view>
+<van-notice-bar scrollable color="#f6870b" text="云瑶家庭空气监控--致力于家居环境的时刻关注,为美好生活保驾护航" />
+
+
+<van-popup show="{{ showarea }}" bind:close="onClosearea" position="bottom">
+  <van-area area-list="{{ areaList }}" value="440105" bind:cancel="onClosearea" bind:confirm="onfinish" />
+</van-popup>
+
+<page-container
+show="{{ showurl }}"
+position="bottom"
+custom-style="height: 20%;"
+bind:clickoverlay="onCloseurl">
+  <van-cell-group>
+    <van-field
+      label="当前设备号："
+      value="{{url}}"
+      center
+      readonly="true"
+      type="number"
+      >
+      <van-button slot="button" size="small" type="primary" bindtap="onedit">
+        编辑
+      </van-button>
+    </van-field>
+
+    <view hidden="{{showedit}}">
+    <van-field 
+      label="新的设备号："
+      center
+      value="{{url}}"
+      type="number"
+      bind:input="oninput"
+      bind:blur="onblur"
+      >
+      <van-button slot="button" size="small" type="primary" bindtap="onbotton">
+        确定
+      </van-button>
+    </van-field>
+    </view>
+  </van-cell-group>
+</page-container>
+
+
+<van-toast id="van-toast"/>

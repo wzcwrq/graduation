@@ -1,0 +1,37 @@
+<view class="root_wrapper">
+  <view class="header_wrapper">
+  </view>
+
+  <view class="circle-wrapper">
+    <view class="circle-background">
+      <van-circle value="{{value}}" size="120" color="{{gradientColor}}"   stroke-width="8">
+      </van-circle>
+      <image class="msgimage" src="/static/images/msglogo.png" ></image>
+    </view> 
+</view>
+
+<view class="header"></view>
+<view class="header"></view>
+<view class="body_wrapper">
+<van-radio-group value="{{ radio }}" bind:change="onChange">
+  <van-cell-group >
+    <view class="body">
+    <van-cell center title="向 外 排  风" custom-style="font-size: 20px;" clickable data-name="1" bind:click="onClick">
+      <van-radio slot="right-icon" name="1"  checked-color="#44d3fc"   icon-size="30px"/>
+    </van-cell>
+  </view>
+    <view style="height: 12px;"></view>
+    <view class="body">
+    <van-cell center title="向 内 送 风" custom-style="font-size: 20px;" clickable data-name="2" bind:click="onClick">
+      <van-radio slot="right-icon" name="2"  checked-color="#44d3fc"   icon-size="30px" />
+    </van-cell>
+    </view>
+  </van-cell-group>
+</van-radio-group>
+</view>
+<view class="header"></view>
+<view class="button">
+  <van-button  type="primary" size="large" round  color="linear-gradient(to right, rgb(54, 165, 258), #44d3fc,rgb(84, 255, 236))" bind:click="save_vent" >确  定</van-button>
+</view>
+</view>
+

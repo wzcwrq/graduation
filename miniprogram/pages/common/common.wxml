@@ -1,0 +1,15 @@
+<!--pages/common/common.wxml-->
+<van-cell title="通知" is-link bindtap="sendreq"></van-cell>
+<van-cell title="小程序介绍" label="——是基于STM32的室内空气监控设备的移动端，能实时（每10秒更新）显示安装于室内的设备所检测得到的各项空气数据，包括温湿度，可燃气体、PM2.5的浓度，并实现超过安全值进行通知提醒，以及远程控制警报器和通风机的功能。致在让使用者对自身生活环境信息有足够的掌握和通过该设备改善室内环境，保障自身居住环境的健康。"/>
+<van-cell title="实时空气数据更新间隔：每十秒更新" />
+<van-cell title="城市天气数据更新间隔：每两分钟更新" />
+<van-cell title="小程序版本：1.2.3" />
+<van-cell label="更多功能，敬请期待"/>
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  overlay="{{overlay}}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+

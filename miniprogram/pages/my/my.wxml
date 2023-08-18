@@ -1,0 +1,42 @@
+<!--pages/my/my.wxml-->
+<view class="root-wrapper">
+  <view class="root">
+    <view class="header-wrapper">
+      <!--  -->
+      <image class="background" style="width: 750rpx; display: block; box-sizing: content-box" src="/static/images/background.jpg">  
+      </image>
+      <!--  -->
+      <view class="user-info">
+        <view class="avatar-wrapper">
+          <image class="image" src="/static/images/msglogo.png" ></image>
+        </view>
+        <view class="username-wrapper" bindtap="username">
+          <view class="username">云 瑶 
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <!--  -->
+      <view class="body-wrapper">
+        <view class="list-wrapper" >
+          <view class="list" hover-class="navigator-hover"bindtap="tosafe">
+            <view >账号与安全</view>
+            <view>></view>
+          </view>
+        </view>
+        <view class="list-wrapper">
+          <view class="list" hover-class="navigator-hover" bindtap="tocommon">
+            <view>通用设置</view>
+            <view>></view>
+          </view>
+        </view>
+        <view class="list-wrapper">
+          <view class="list"  hover-class="navigator-hover" bindtap="toaboutus">
+            <view>联系我</view>
+            <view>></view>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

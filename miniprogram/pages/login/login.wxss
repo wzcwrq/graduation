@@ -1,0 +1,27 @@
+/* pages/login/login.wxss */
+.logo{
+  width: 750rpx; 
+  height: 350rpx;
+   display: block; 
+   box-sizing: border-box;
+}
+.gradual{
+  background: linear-gradient(#fff, rgb(202, 93, 4));
+}
+.body-wrapper{
+  margin-top:80rpx;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.body{
+  padding: 5rpx 5rpx 5rpx 5rpx;
+  margin-top: 20rpx;
+}
+
+.button{
+  padding: 150rpx 30rpx 0 30rpx;
+}
+
+.navigator-hover {
+  color:rgb(0, 0, 252);
+}

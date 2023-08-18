@@ -1,0 +1,57 @@
+/* pages/vent/vent.wxss */
+.root_wrapper{
+  width: 100%;
+  height: 1000px;
+  z-index: -2;
+  position: absolute;
+ 
+}
+.header_wrapper{
+  width: 100%;
+  height: 200px;
+  z-index: -1;
+  position: absolute;
+  border-radius: 0 0 100px 100px;
+  background: linear-gradient(to bottom right,rgb(54, 65, 228),rgb(114, 255, 236));
+}
+.circle-wrapper{
+  margin-top: 60rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle-background{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.msgimage{
+  width:135px;
+  height:135px;
+  z-index: 1;
+  border-radius: 50%;
+  margin-top: -135px;
+}
+
+.header{
+  width: 100%;
+  height: 49px;
+}
+
+.body_wrapper{
+  margin-left: 2%;
+  margin-right:2%;
+  padding:25px 1% 25px 1%;
+  background: linear-gradient(rgba(216, 216, 216, 0.4),rgba(222,222,222,0.8));
+  border-radius: 25px;
+}
+
+.body{
+  border-radius: 25px;
+  overflow: hidden;
+}
+.button{
+  padding:30px 3% 20px 3%;
+  border-radius: 25px;
+}

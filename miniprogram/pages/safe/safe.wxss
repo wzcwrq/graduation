@@ -1,0 +1,18 @@
+/* pages/safe/safe.wxss */
+.root-wrapper{
+  width: 100%;
+
+}
+
+.gradual{
+  background: linear-gradient(#fff, rgb(202, 93, 4));
+}
+
+.botton{
+  padding: 10rpx 0 0 0;
+  margin-top: 25rpx;
+}
+
+.body{
+  background-color: aquamarine;
+}
